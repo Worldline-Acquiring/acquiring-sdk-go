@@ -6,6 +6,7 @@ package domain
 type APIRefundResponse struct {
 	AuthorizationCode       *string                     `json:"authorizationCode,omitempty"`
 	CardPaymentData         *CardPaymentDataForResource `json:"cardPaymentData,omitempty"`
+	EmvData                 *[]EmvDataItem              `json:"emvData,omitempty"`
 	OperationID             *string                     `json:"operationId,omitempty"`
 	ReferencedPaymentID     *string                     `json:"referencedPaymentId,omitempty"`
 	References              *APIReferencesForResponses  `json:"references,omitempty"`

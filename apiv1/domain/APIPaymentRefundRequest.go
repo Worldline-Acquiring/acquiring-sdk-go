@@ -9,6 +9,7 @@ type APIPaymentRefundRequest struct {
 	DynamicCurrencyConversion *DccData           `json:"dynamicCurrencyConversion,omitempty"`
 	OperationID               *string            `json:"operationId,omitempty"`
 	References                *PaymentReferences `json:"references,omitempty"`
+	TerminalData              *TerminalData      `json:"terminalData,omitempty"`
 	TransactionTimestamp      *string            `json:"transactionTimestamp,omitempty"`
 }
 

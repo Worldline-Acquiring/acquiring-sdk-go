@@ -4,8 +4,7 @@ package domain
 
 // CardPaymentDataForResource represents class CardPaymentDataForResource
 type CardPaymentDataForResource struct {
-	Brand           *string          `json:"brand,omitempty"`
-	PointOfSaleData *PointOfSaleData `json:"pointOfSaleData,omitempty"`
+	Brand *string `json:"brand,omitempty"`
 }
 
 // NewCardPaymentDataForResource constructs a new CardPaymentDataForResource instance

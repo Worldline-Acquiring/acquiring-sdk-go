@@ -4,10 +4,11 @@ package domain
 
 // APIIncrementRequest represents class ApiIncrementRequest
 type APIIncrementRequest struct {
-	DynamicCurrencyConversion *DccData    `json:"dynamicCurrencyConversion,omitempty"`
-	IncrementAmount           *AmountData `json:"incrementAmount,omitempty"`
-	OperationID               *string     `json:"operationId,omitempty"`
-	TransactionTimestamp      *string     `json:"transactionTimestamp,omitempty"`
+	DynamicCurrencyConversion *DccData      `json:"dynamicCurrencyConversion,omitempty"`
+	IncrementAmount           *AmountData   `json:"incrementAmount,omitempty"`
+	OperationID               *string       `json:"operationId,omitempty"`
+	TerminalData              *TerminalData `json:"terminalData,omitempty"`
+	TransactionTimestamp      *string       `json:"transactionTimestamp,omitempty"`
 }
 
 // NewAPIIncrementRequest constructs a new APIIncrementRequest instance

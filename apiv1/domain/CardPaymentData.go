@@ -6,6 +6,7 @@ package domain
 type CardPaymentData struct {
 	AllowPartialApproval         *bool             `json:"allowPartialApproval,omitempty"`
 	Brand                        *string           `json:"brand,omitempty"`
+	BrandSelector                *string           `json:"brandSelector,omitempty"`
 	CaptureImmediately           *bool             `json:"captureImmediately,omitempty"`
 	CardData                     *PlainCardData    `json:"cardData,omitempty"`
 	CardEntryMode                *string           `json:"cardEntryMode,omitempty"`

@@ -5,6 +5,7 @@ package domain
 // APIPaymentResponse represents class ApiPaymentResponse
 type APIPaymentResponse struct {
 	CardPaymentData          *CardPaymentDataForResponse `json:"cardPaymentData,omitempty"`
+	EmvData                  *[]EmvDataItem              `json:"emvData,omitempty"`
 	InitialAuthorizationCode *string                     `json:"initialAuthorizationCode,omitempty"`
 	OperationID              *string                     `json:"operationId,omitempty"`
 	PaymentID                *string                     `json:"paymentId,omitempty"`

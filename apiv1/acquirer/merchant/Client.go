@@ -4,6 +4,7 @@ package merchant
 
 import (
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/accountverifications"
+	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/balanceinquiries"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/dynamiccurrencyconversion"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/payments"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/refunds"
@@ -31,6 +32,12 @@ func (c *Client) Refunds() *refunds.Client {
 // AccountVerifications represents the resource /processing/v1/{acquirerId}/{merchantId}/account-verifications
 func (c *Client) AccountVerifications() *accountverifications.Client {
 	client, _ := accountverifications.NewClient(c.apiResource, nil)
+	return client
+}
+
+// BalanceInquiries represents the resource /processing/v1/{acquirerId}/{merchantId}/balance-inquiries
+func (c *Client) BalanceInquiries() *balanceinquiries.Client {
+	client, _ := balanceinquiries.NewClient(c.apiResource, nil)
 	return client
 }
 

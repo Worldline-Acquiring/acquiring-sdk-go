@@ -4,9 +4,10 @@ package domain
 
 // APITechnicalReversalRequest represents class ApiTechnicalReversalRequest
 type APITechnicalReversalRequest struct {
-	OperationID          *string `json:"operationId,omitempty"`
-	Reason               *string `json:"reason,omitempty"`
-	TransactionTimestamp *string `json:"transactionTimestamp,omitempty"`
+	OperationID          *string       `json:"operationId,omitempty"`
+	Reason               *string       `json:"reason,omitempty"`
+	TerminalData         *TerminalData `json:"terminalData,omitempty"`
+	TransactionTimestamp *string       `json:"transactionTimestamp,omitempty"`
 }
 
 // NewAPITechnicalReversalRequest constructs a new APITechnicalReversalRequest instance
