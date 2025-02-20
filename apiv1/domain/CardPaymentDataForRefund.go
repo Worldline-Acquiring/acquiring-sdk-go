@@ -11,6 +11,7 @@ type CardPaymentDataForRefund struct {
 	CardEntryMode                *string           `json:"cardEntryMode,omitempty"`
 	CardholderVerificationMethod *string           `json:"cardholderVerificationMethod,omitempty"`
 	NetworkTokenData             *NetworkTokenData `json:"networkTokenData,omitempty"`
+	PointOfSaleData              *PointOfSaleData  `json:"pointOfSaleData,omitempty"`
 	WalletID                     *string           `json:"walletId,omitempty"`
 }
 

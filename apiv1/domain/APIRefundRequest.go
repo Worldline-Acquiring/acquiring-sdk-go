@@ -10,6 +10,7 @@ type APIRefundRequest struct {
 	Merchant                  *MerchantData             `json:"merchant,omitempty"`
 	OperationID               *string                   `json:"operationId,omitempty"`
 	References                *PaymentReferences        `json:"references,omitempty"`
+	TerminalData              *TerminalData             `json:"terminalData,omitempty"`
 	TransactionTimestamp      *string                   `json:"transactionTimestamp,omitempty"`
 }
 

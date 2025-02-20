@@ -104,7 +104,7 @@ func newAuthenticator(conf *configuration.CommunicatorConfiguration, connectionF
 	// The empty path will ensure that all paths will match, as each full path ends with an empty string.
 	accessTokens := []*tokenType{
 		newTokenType("", "processing_payment processing_refund processing_credittransfer "+
-			"processing_accountverification processing_operation_reverse processing_dcc_rate services_ping"),
+			"processing_accountverification processing_balanceinquiry processing_operation_reverse processing_dcc_rate services_ping"),
 	}
 
 	authenticator := Authenticator{
@@ -188,6 +188,11 @@ func (a *Authenticator) getAccessToken(scopes string) (*accessToken, error) {
 		}
 
 		if statusCode != 200 {
+			if accessTokenResponse.ErrorDescription == nil {
+				return nil, oauth2Errors.NewOAuth2Error(fmt.Sprintf("There was an error while retrieving the OAuth2 access token: %s",
+					*accessTokenResponse.Error,
+				))
+			}
 			return nil, oauth2Errors.NewOAuth2Error(fmt.Sprintf("There was an error while retrieving the OAuth2 access token: %s - %s",
 				*accessTokenResponse.Error, *accessTokenResponse.ErrorDescription,
 			))

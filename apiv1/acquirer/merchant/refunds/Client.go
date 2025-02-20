@@ -176,7 +176,7 @@ func (c *Client) CaptureRefund(refundID string, body domain.APICaptureRequestFor
 //     the Worldline Acquiring platform was unable to process a message from a downstream partner/acquirer,
 //     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
 //   * APIError if the Worldline Acquiring platform returned any other error
-func (c *Client) ReverseRefundAuthorization(refundID string, body domain.APIPaymentReversalRequest, context *communicator.CallContext) (domain.APIActionResponseForRefund, error) {
+func (c *Client) ReverseRefundAuthorization(refundID string, body domain.APIRefundReversalRequest, context *communicator.CallContext) (domain.APIActionResponseForRefund, error) {
 	var resultObject domain.APIActionResponseForRefund
 
 	pathContext := map[string]string{
