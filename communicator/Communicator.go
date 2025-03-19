@@ -3,7 +3,6 @@ package communicator
 import (
 	"errors"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -575,7 +574,7 @@ func getHeaderDateString() string {
 // Checks the Response for errors and creates an error if necessary.
 func (c *Communicator) createErrorIfNecessary(statusCode int, reader io.Reader, headers []communication.Header, requestPath string) error {
 	if statusCode < http.StatusOK || statusCode >= http.StatusMultipleChoices {
-		bodyBuff, err := ioutil.ReadAll(reader)
+		bodyBuff, err := io.ReadAll(reader)
 		if err != nil {
 			return err
 		}

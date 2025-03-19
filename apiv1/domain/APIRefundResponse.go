@@ -4,8 +4,9 @@ package domain
 
 // APIRefundResponse represents class ApiRefundResponse
 type APIRefundResponse struct {
+	AdditionalResponseData  *AdditionalResponseData     `json:"additionalResponseData,omitempty"`
 	AuthorizationCode       *string                     `json:"authorizationCode,omitempty"`
-	CardPaymentData         *CardPaymentDataForResource `json:"cardPaymentData,omitempty"`
+	CardPaymentData         *CardPaymentDataForResponse `json:"cardPaymentData,omitempty"`
 	EmvData                 *[]EmvDataItem              `json:"emvData,omitempty"`
 	OperationID             *string                     `json:"operationId,omitempty"`
 	ReferencedPaymentID     *string                     `json:"referencedPaymentId,omitempty"`
@@ -15,7 +16,6 @@ type APIRefundResponse struct {
 	ResponseCode            *string                     `json:"responseCode,omitempty"`
 	ResponseCodeCategory    *string                     `json:"responseCodeCategory,omitempty"`
 	ResponseCodeDescription *string                     `json:"responseCodeDescription,omitempty"`
-	RetryAfter              *string                     `json:"retryAfter,omitempty"`
 	Status                  *string                     `json:"status,omitempty"`
 	StatusTimestamp         *string                     `json:"statusTimestamp,omitempty"`
 	TotalAuthorizedAmount   *AmountData                 `json:"totalAuthorizedAmount,omitempty"`

@@ -4,9 +4,10 @@ package domain
 
 // PlainCardData represents class PlainCardData
 type PlainCardData struct {
-	CardNumber       *string `json:"cardNumber,omitempty"`
-	CardSecurityCode *string `json:"cardSecurityCode,omitempty"`
-	ExpiryDate       *string `json:"expiryDate,omitempty"`
+	CardNumber         *string `json:"cardNumber,omitempty"`
+	CardSecurityCode   *string `json:"cardSecurityCode,omitempty"`
+	CardSequenceNumber *int32  `json:"cardSequenceNumber,omitempty"`
+	ExpiryDate         *string `json:"expiryDate,omitempty"`
 }
 
 // NewPlainCardData constructs a new PlainCardData instance

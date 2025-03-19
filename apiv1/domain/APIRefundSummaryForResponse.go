@@ -6,7 +6,6 @@ package domain
 type APIRefundSummaryForResponse struct {
 	References      *APIReferencesForResponses `json:"references,omitempty"`
 	RefundID        *string                    `json:"refundId,omitempty"`
-	RetryAfter      *string                    `json:"retryAfter,omitempty"`
 	Status          *string                    `json:"status,omitempty"`
 	StatusTimestamp *string                    `json:"statusTimestamp,omitempty"`
 }

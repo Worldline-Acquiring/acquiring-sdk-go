@@ -4,6 +4,7 @@ package domain
 
 // APIIncrementResponse represents class ApiIncrementResponse
 type APIIncrementResponse struct {
+	AdditionalResponseData  *AdditionalResponseData       `json:"additionalResponseData,omitempty"`
 	AuthorizationCode       *string                       `json:"authorizationCode,omitempty"`
 	OperationID             *string                       `json:"operationId,omitempty"`
 	Payment                 *APIPaymentSummaryForResponse `json:"payment,omitempty"`

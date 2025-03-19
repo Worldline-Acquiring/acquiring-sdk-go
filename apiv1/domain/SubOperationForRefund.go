@@ -11,7 +11,6 @@ type SubOperationForRefund struct {
 	ResponseCode            *string     `json:"responseCode,omitempty"`
 	ResponseCodeCategory    *string     `json:"responseCodeCategory,omitempty"`
 	ResponseCodeDescription *string     `json:"responseCodeDescription,omitempty"`
-	RetryAfter              *string     `json:"retryAfter,omitempty"`
 }
 
 // NewSubOperationForRefund constructs a new SubOperationForRefund instance

@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"mime/multipart"
 	"net"
 	"net/http"
@@ -224,7 +223,7 @@ func (c *DefaultConnection) logResponse(id string, reader io.Reader, binaryRespo
 			// continue with logging
 		}
 	} else {
-		bodyBuff, err := ioutil.ReadAll(reader)
+		bodyBuff, err := io.ReadAll(reader)
 		if err != nil {
 			c.logError(id, err)
 			// continue with logging

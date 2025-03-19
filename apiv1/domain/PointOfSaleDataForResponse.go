@@ -4,8 +4,9 @@ package domain
 
 // PointOfSaleDataForResponse represents class PointOfSaleDataForResponse
 type PointOfSaleDataForResponse struct {
-	PanLast4Digits  *string `json:"panLast4Digits,omitempty"`
-	PinRetryCounter *int32  `json:"pinRetryCounter,omitempty"`
+	EmvData         *[]EmvDataItem `json:"emvData,omitempty"`
+	PanLast4Digits  *string        `json:"panLast4Digits,omitempty"`
+	PinRetryCounter *int32         `json:"pinRetryCounter,omitempty"`
 }
 
 // NewPointOfSaleDataForResponse constructs a new PointOfSaleDataForResponse instance

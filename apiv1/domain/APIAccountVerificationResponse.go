@@ -4,6 +4,7 @@ package domain
 
 // APIAccountVerificationResponse represents class ApiAccountVerificationResponse
 type APIAccountVerificationResponse struct {
+	AdditionalResponseData  *AdditionalResponseData     `json:"additionalResponseData,omitempty"`
 	AuthorizationCode       *string                     `json:"authorizationCode,omitempty"`
 	CardPaymentData         *CardPaymentDataForResponse `json:"cardPaymentData,omitempty"`
 	OperationID             *string                     `json:"operationId,omitempty"`

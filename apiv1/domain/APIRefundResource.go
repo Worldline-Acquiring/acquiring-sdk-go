@@ -10,7 +10,6 @@ type APIRefundResource struct {
 	ReferencedPaymentID      *string                     `json:"referencedPaymentId,omitempty"`
 	References               *APIReferencesForResponses  `json:"references,omitempty"`
 	RefundID                 *string                     `json:"refundId,omitempty"`
-	RetryAfter               *string                     `json:"retryAfter,omitempty"`
 	Status                   *string                     `json:"status,omitempty"`
 	StatusTimestamp          *string                     `json:"statusTimestamp,omitempty"`
 	TotalAuthorizedAmount    *AmountData                 `json:"totalAuthorizedAmount,omitempty"`

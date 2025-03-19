@@ -39,10 +39,8 @@ func (ar APIResource) InstantiateURI(uri string) (string, error) {
 }
 
 func replaceAll(uri string, pathContext map[string]string) string {
-	if pathContext != nil {
-		for key, value := range pathContext {
-			uri = strings.Replace(uri, "{"+key+"}", value, -1)
-		}
+	for key, value := range pathContext {
+		uri = strings.Replace(uri, "{"+key+"}", value, -1)
 	}
 
 	return uri

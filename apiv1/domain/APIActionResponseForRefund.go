@@ -4,6 +4,7 @@ package domain
 
 // APIActionResponseForRefund represents class ApiActionResponseForRefund
 type APIActionResponseForRefund struct {
+	AdditionalResponseData  *AdditionalResponseData      `json:"additionalResponseData,omitempty"`
 	OperationID             *string                      `json:"operationId,omitempty"`
 	Refund                  *APIRefundSummaryForResponse `json:"refund,omitempty"`
 	Responder               *string                      `json:"responder,omitempty"`
