@@ -48,14 +48,23 @@ func (t *tokenType) isAccessTokenNullOrExpired() bool {
 	return t.accessToken == nil || t.accessToken.expirationTime.Before(time.Now())
 }
 
+func getTokenType(fullPath string, tokenTypes []*tokenType) (*tokenType, error) {
+	for _, t := range tokenTypes {
+		if strings.HasSuffix(fullPath, t.path) || strings.Contains(fullPath, t.path+"/") {
+			return t, nil
+		}
+	}
+	return nil, oauth2Errors.NewOAuth2Error("Scope could not be found for path " + fullPath)
+}
+
 // Authenticator represents an authentication.Authenticator implementation using OAuth2
 type Authenticator struct {
-	clientID          string
-	clientSecret      string
-	tokenURI          url.URL
-	connectionFactory func() (oauth2Connection, error)
-	marshaller        json.Marshaller
-	accessTokens      []*tokenType
+	clientID              string
+	clientSecret          string
+	tokenURI              url.URL
+	connectionFactory     func() (oauth2Connection, error)
+	marshaller            json.Marshaller
+	pathToTokenTypeMapper func(string) (*tokenType, error)
 }
 
 // NewAuthenticator creates an OAuth2Authenticator using values from the given CommunicatorConfiguration.
@@ -99,28 +108,39 @@ func newAuthenticator(conf *configuration.CommunicatorConfiguration, connectionF
 
 	marshaller := json.DefaultMarshaller()
 
-	// Only a limited amount of scopes may be sent in one request.
-	// While at the moment all scopes fit in one request, keep this code so we can easily add more token types if necessary.
-	// The empty path will ensure that all paths will match, as each full path ends with an empty string.
-	accessTokens := []*tokenType{
-		newTokenType("", "processing_payment processing_refund processing_credittransfer "+
-			"processing_accountverification processing_balanceinquiry processing_operation_reverse processing_dcc_rate services_ping"),
+	var pathToTokenTypeMapper func(string) (*tokenType, error)
+	oauth2Scopes := conf.OAuth2Scopes
+	if len(conf.OAuth2Scopes) > 0 {
+		t := newTokenType("", oauth2Scopes)
+		pathToTokenTypeMapper = func(path string) (*tokenType, error) {
+			return t, nil
+		}
+	} else {
+		// Only a limited amount of scopes may be sent in one request.
+		// While at the moment all scopes fit in one request, keep this code so we can easily add more token types if necessary.
+		// The empty path will ensure that all paths will match, as each full path ends with an empty string.
+		tokenTypes := []*tokenType{
+			newTokenType("", allScopesString),
+		}
+		pathToTokenTypeMapper = func(path string) (*tokenType, error) {
+			return getTokenType(path, tokenTypes)
+		}
 	}
 
 	authenticator := Authenticator{
-		clientID:          conf.GetOAuth2ClientID(),
-		clientSecret:      conf.GetOAuth2ClientSecret(),
-		tokenURI:          *tokenURI,
-		connectionFactory: connectionFactory,
-		marshaller:        marshaller,
-		accessTokens:      accessTokens,
+		clientID:              conf.GetOAuth2ClientID(),
+		clientSecret:          conf.GetOAuth2ClientSecret(),
+		tokenURI:              *tokenURI,
+		connectionFactory:     connectionFactory,
+		marshaller:            marshaller,
+		pathToTokenTypeMapper: pathToTokenTypeMapper,
 	}
 	return &authenticator, nil
 }
 
 // GetAuthorization returns an OAuth2 bearer token including the Bearer prefix
 func (a *Authenticator) GetAuthorization(httpMethod string, resourceURI url.URL, requestHeaders []communication.Header) (string, error) {
-	t, err := a.getTokenType(resourceURI.Path)
+	t, err := a.pathToTokenTypeMapper(resourceURI.Path)
 	if err != nil {
 		return "", err
 	}
@@ -148,15 +168,6 @@ func (a *Authenticator) GetAuthorization(httpMethod string, resourceURI url.URL,
 	t.lock.RUnlock()
 
 	return authorization, nil
-}
-
-func (a *Authenticator) getTokenType(fullPath string) (*tokenType, error) {
-	for _, t := range a.accessTokens {
-		if strings.HasSuffix(fullPath, t.path) || strings.Contains(fullPath, t.path+"/") {
-			return t, nil
-		}
-	}
-	return nil, oauth2Errors.NewOAuth2Error("Scope could not be found for path " + fullPath)
 }
 
 func (a *Authenticator) getAccessToken(scopes string) (*accessToken, error) {

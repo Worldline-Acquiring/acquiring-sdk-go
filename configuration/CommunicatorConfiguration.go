@@ -31,6 +31,8 @@ type CommunicatorConfiguration struct {
 	AuthorizationSecret string
 	// OAuth2TokenURI represents the OAuth2 token URI.
 	OAuth2TokenURI string
+	// OAuth2Scopes represents the OAuth2 scopes. Leave empty to let the SDK provide a set of defaults.
+	OAuth2Scopes string
 	// Proxy represents the URL for the connection proxy
 	Proxy *url.URL
 	// Integrator represents the integrator name

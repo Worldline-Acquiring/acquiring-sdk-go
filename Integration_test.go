@@ -5,11 +5,14 @@ import (
 	"fmt"
 	"net/url"
 	"os"
+	"strings"
 	"testing"
 	"time"
 
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/payments"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/domain"
+	v1Errors "github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/errors"
+	oauthErrors "github.com/Worldline-Acquiring/acquiring-sdk-go/authentication/oauth2/errors"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/configuration"
 )
 
@@ -70,6 +73,94 @@ func TestIntegratedRequestDCCRate(t *testing.T) {
 		t.Fatal(err)
 	}
 	assertDccRateResponse(t, request, response)
+}
+
+func TestIntegratedValidOAuth2Scopes(t *testing.T) {
+	skipTestIfNeeded(t)
+
+	validOauth2Scopes := []string{
+		"processing_dcc_rate",
+		"processing_dcc_rate services_ping",
+		"",
+	}
+	for i := range validOauth2Scopes {
+		oauth2Scopes := validOauth2Scopes[i]
+		t.Run(fmt.Sprintf("with scopes '%s'", oauth2Scopes), func(t *testing.T) {
+			conf, err := getConfigurationIntegration()
+			if err != nil {
+				t.Fatal(err)
+			}
+			conf.OAuth2Scopes = oauth2Scopes
+
+			client, err := CreateClientFromConfiguration(conf)
+			if err != nil {
+				t.Fatal(err)
+			}
+			defer func(client *Client) {
+				_ = client.Close()
+			}(client)
+
+			request := getDCCRateIntegrationTestRequest(t, 200)
+			response, err := client.V1().Acquirer(envAcquirerID).Merchant(envMerchantID).DynamicCurrencyConversion().RequestDccRate(request, nil)
+			if err != nil {
+				t.Fatal(err)
+			}
+			assertDccRateResponse(t, request, response)
+		})
+	}
+}
+
+func TestIntegratedMissingOAuth2Scopes(t *testing.T) {
+	skipTestIfNeeded(t)
+
+	conf, err := getConfigurationIntegration()
+	if err != nil {
+		t.Fatal(err)
+	}
+	conf.OAuth2Scopes = "services_ping"
+
+	client, err := CreateClientFromConfiguration(conf)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer func(client *Client) {
+		_ = client.Close()
+	}(client)
+
+	request := getDCCRateIntegrationTestRequest(t, 200)
+	_, err = client.V1().Acquirer(envAcquirerID).Merchant(envMerchantID).DynamicCurrencyConversion().RequestDccRate(request, nil)
+
+	if _, ok := err.(*v1Errors.AuthorizationError); !ok {
+		t.Fatalf("TestIntegratedMissingOAuth2Scopes: %v", err)
+	}
+}
+
+func TestIntegratedInvalidOAuth2Scopes(t *testing.T) {
+	skipTestIfNeeded(t)
+
+	conf, err := getConfigurationIntegration()
+	if err != nil {
+		t.Fatal(err)
+	}
+	conf.OAuth2Scopes = "processing_dcc_rate invalid_scope"
+
+	client, err := CreateClientFromConfiguration(conf)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer func(client *Client) {
+		_ = client.Close()
+	}(client)
+
+	request := getDCCRateIntegrationTestRequest(t, 200)
+	_, err = client.V1().Acquirer(envAcquirerID).Merchant(envMerchantID).DynamicCurrencyConversion().RequestDccRate(request, nil)
+	if _, ok := err.(*oauthErrors.OAuth2Error); !ok {
+		t.Fatalf("TestIntegratedInvalidOAuth2Scopes : %v", err)
+	}
+	expectedErrorPrefix := "There was an error while retrieving the OAuth2 access token: invalid_scope"
+	if !strings.HasPrefix(err.Error(), expectedErrorPrefix) {
+		t.Fatalf("TestFailedOAuth2Authentication : '%s' does not start with '%s'", err.Error(), expectedErrorPrefix)
+	}
 }
 
 func getProcessPaymentIntegrationTestRequest(t *testing.T) domain.APIPaymentRequest {
