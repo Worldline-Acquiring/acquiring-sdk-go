@@ -2,7 +2,7 @@
 
 package domain
 
-// CardPaymentDataForVerification represents class CardPaymentDataForVerification
+// CardPaymentDataForVerification represents class CardPaymentDataForVerification.
 type CardPaymentDataForVerification struct {
 	Brand                        *string                              `json:"brand,omitempty"`
 	BrandSelector                *string                              `json:"brandSelector,omitempty"`
@@ -16,7 +16,7 @@ type CardPaymentDataForVerification struct {
 	WalletID                     *string                              `json:"walletId,omitempty"`
 }
 
-// NewCardPaymentDataForVerification constructs a new CardPaymentDataForVerification instance
+// NewCardPaymentDataForVerification constructs a new CardPaymentDataForVerification instance.
 func NewCardPaymentDataForVerification() *CardPaymentDataForVerification {
 	return &CardPaymentDataForVerification{}
 }

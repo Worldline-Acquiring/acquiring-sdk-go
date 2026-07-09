@@ -2,7 +2,7 @@
 
 package domain
 
-// APICaptureRequestForRefund represents class ApiCaptureRequestForRefund
+// APICaptureRequestForRefund represents class ApiCaptureRequestForRefund.
 type APICaptureRequestForRefund struct {
 	OperationID          *string            `json:"operationId,omitempty"`
 	References           *PaymentReferences `json:"references,omitempty"`
@@ -10,7 +10,7 @@ type APICaptureRequestForRefund struct {
 	TransactionTimestamp *string            `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPICaptureRequestForRefund constructs a new APICaptureRequestForRefund instance
+// NewAPICaptureRequestForRefund constructs a new APICaptureRequestForRefund instance.
 func NewAPICaptureRequestForRefund() *APICaptureRequestForRefund {
 	return &APICaptureRequestForRefund{}
 }

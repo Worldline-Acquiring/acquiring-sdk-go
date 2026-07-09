@@ -2,7 +2,7 @@
 
 package domain
 
-// GetDccRateResponse represents class GetDccRateResponse
+// GetDccRateResponse represents class GetDccRateResponse.
 type GetDccRateResponse struct {
 	DisclaimerDisplay *string      `json:"disclaimerDisplay,omitempty"`
 	DisclaimerReceipt *string      `json:"disclaimerReceipt,omitempty"`
@@ -10,7 +10,7 @@ type GetDccRateResponse struct {
 	Result            *string      `json:"result,omitempty"`
 }
 
-// NewGetDccRateResponse constructs a new GetDccRateResponse instance
+// NewGetDccRateResponse constructs a new GetDccRateResponse instance.
 func NewGetDccRateResponse() *GetDccRateResponse {
 	return &GetDccRateResponse{}
 }

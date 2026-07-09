@@ -2,7 +2,7 @@
 
 package domain
 
-// PointOfSaleData represents class PointOfSaleData
+// PointOfSaleData represents class PointOfSaleData.
 type PointOfSaleData struct {
 	EmvData                       *[]EmvDataItem `json:"emvData,omitempty"`
 	EncryptedPinBlock             *string        `json:"encryptedPinBlock,omitempty"`
@@ -12,7 +12,7 @@ type PointOfSaleData struct {
 	Track2Data                    *string        `json:"track2Data,omitempty"`
 }
 
-// NewPointOfSaleData constructs a new PointOfSaleData instance
+// NewPointOfSaleData constructs a new PointOfSaleData instance.
 func NewPointOfSaleData() *PointOfSaleData {
 	return &PointOfSaleData{}
 }

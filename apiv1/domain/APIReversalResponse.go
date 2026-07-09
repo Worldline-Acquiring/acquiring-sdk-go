@@ -2,7 +2,7 @@
 
 package domain
 
-// APIReversalResponse represents class ApiReversalResponse
+// APIReversalResponse represents class ApiReversalResponse.
 type APIReversalResponse struct {
 	AdditionalResponseData  *AdditionalResponseData       `json:"additionalResponseData,omitempty"`
 	OperationID             *string                       `json:"operationId,omitempty"`
@@ -14,7 +14,7 @@ type APIReversalResponse struct {
 	TotalAuthorizedAmount   *AmountData                   `json:"totalAuthorizedAmount,omitempty"`
 }
 
-// NewAPIReversalResponse constructs a new APIReversalResponse instance
+// NewAPIReversalResponse constructs a new APIReversalResponse instance.
 func NewAPIReversalResponse() *APIReversalResponse {
 	return &APIReversalResponse{}
 }

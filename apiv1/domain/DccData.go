@@ -2,7 +2,7 @@
 
 package domain
 
-// DccData represents class DccData
+// DccData represents class DccData.
 type DccData struct {
 	Amount           *int64   `json:"amount,omitempty"`
 	ConversionRate   *float64 `json:"conversionRate,omitempty"`
@@ -10,7 +10,7 @@ type DccData struct {
 	NumberOfDecimals *int32   `json:"numberOfDecimals,omitempty"`
 }
 
-// NewDccData constructs a new DccData instance
+// NewDccData constructs a new DccData instance.
 func NewDccData() *DccData {
 	return &DccData{}
 }

@@ -2,7 +2,7 @@
 
 package domain
 
-// DccProposal represents class DccProposal
+// DccProposal represents class DccProposal.
 type DccProposal struct {
 	OriginalAmount  *AmountData `json:"originalAmount,omitempty"`
 	Rate            *RateData   `json:"rate,omitempty"`
@@ -10,7 +10,7 @@ type DccProposal struct {
 	ResultingAmount *AmountData `json:"resultingAmount,omitempty"`
 }
 
-// NewDccProposal constructs a new DccProposal instance
+// NewDccProposal constructs a new DccProposal instance.
 func NewDccProposal() *DccProposal {
 	return &DccProposal{}
 }

@@ -2,7 +2,7 @@
 
 package domain
 
-// RateData represents class RateData
+// RateData represents class RateData.
 type RateData struct {
 	ExchangeRate         *float64 `json:"exchangeRate,omitempty"`
 	InvertedExchangeRate *float64 `json:"invertedExchangeRate,omitempty"`
@@ -11,7 +11,7 @@ type RateData struct {
 	QuotationDateTime    *string  `json:"quotationDateTime,omitempty"`
 }
 
-// NewRateData constructs a new RateData instance
+// NewRateData constructs a new RateData instance.
 func NewRateData() *RateData {
 	return &RateData{}
 }

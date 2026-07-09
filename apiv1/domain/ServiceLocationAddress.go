@@ -2,7 +2,7 @@
 
 package domain
 
-// ServiceLocationAddress represents class ServiceLocationAddress
+// ServiceLocationAddress represents class ServiceLocationAddress.
 type ServiceLocationAddress struct {
 	City                   *string `json:"city,omitempty"`
 	CountryCode            *string `json:"countryCode,omitempty"`
@@ -10,7 +10,7 @@ type ServiceLocationAddress struct {
 	PostalCode             *string `json:"postalCode,omitempty"`
 }
 
-// NewServiceLocationAddress constructs a new ServiceLocationAddress instance
+// NewServiceLocationAddress constructs a new ServiceLocationAddress instance.
 func NewServiceLocationAddress() *ServiceLocationAddress {
 	return &ServiceLocationAddress{}
 }

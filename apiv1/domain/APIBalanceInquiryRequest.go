@@ -2,7 +2,7 @@
 
 package domain
 
-// APIBalanceInquiryRequest represents class ApiBalanceInquiryRequest
+// APIBalanceInquiryRequest represents class ApiBalanceInquiryRequest.
 type APIBalanceInquiryRequest struct {
 	CardPaymentData      *CardPaymentDataForBalanceInquiry `json:"cardPaymentData,omitempty"`
 	Merchant             *MerchantData                     `json:"merchant,omitempty"`
@@ -12,7 +12,7 @@ type APIBalanceInquiryRequest struct {
 	TransactionTimestamp *string                           `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPIBalanceInquiryRequest constructs a new APIBalanceInquiryRequest instance
+// NewAPIBalanceInquiryRequest constructs a new APIBalanceInquiryRequest instance.
 func NewAPIBalanceInquiryRequest() *APIBalanceInquiryRequest {
 	return &APIBalanceInquiryRequest{}
 }

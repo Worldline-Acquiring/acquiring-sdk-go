@@ -2,7 +2,7 @@
 
 package domain
 
-// ThreeDSecure represents class ThreeDSecure
+// ThreeDSecure represents class ThreeDSecure.
 type ThreeDSecure struct {
 	AuthenticationValue          *string `json:"authenticationValue,omitempty"`
 	DirectoryServerTransactionID *string `json:"directoryServerTransactionId,omitempty"`
@@ -11,7 +11,7 @@ type ThreeDSecure struct {
 	Version                      *string `json:"version,omitempty"`
 }
 
-// NewThreeDSecure constructs a new ThreeDSecure instance
+// NewThreeDSecure constructs a new ThreeDSecure instance.
 func NewThreeDSecure() *ThreeDSecure {
 	return &ThreeDSecure{}
 }

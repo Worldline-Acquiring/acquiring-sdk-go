@@ -2,7 +2,7 @@
 
 package domain
 
-// PlainCardData represents class PlainCardData
+// PlainCardData represents class PlainCardData.
 type PlainCardData struct {
 	CardNumber         *string `json:"cardNumber,omitempty"`
 	CardSecurityCode   *string `json:"cardSecurityCode,omitempty"`
@@ -10,7 +10,7 @@ type PlainCardData struct {
 	ExpiryDate         *string `json:"expiryDate,omitempty"`
 }
 
-// NewPlainCardData constructs a new PlainCardData instance
+// NewPlainCardData constructs a new PlainCardData instance.
 func NewPlainCardData() *PlainCardData {
 	return &PlainCardData{}
 }

@@ -2,13 +2,13 @@
 
 package domain
 
-// AdditionalResponseData represents class AdditionalResponseData
+// AdditionalResponseData represents class AdditionalResponseData.
 type AdditionalResponseData struct {
 	MerchantAdviceCode            *string `json:"merchantAdviceCode,omitempty"`
 	MerchantAdviceCodeDescription *string `json:"merchantAdviceCodeDescription,omitempty"`
 }
 
-// NewAdditionalResponseData constructs a new AdditionalResponseData instance
+// NewAdditionalResponseData constructs a new AdditionalResponseData instance.
 func NewAdditionalResponseData() *AdditionalResponseData {
 	return &AdditionalResponseData{}
 }

@@ -4,7 +4,7 @@ package errors
 
 // APIError represents an error response from the Worldline Acquiring platform.
 type APIError interface {
-	// Error implements the error interface
+	// Error implements the error interface.
 	Error() string
 
 	// Message gets the raw response body that was returned by the Worldline Acquiring platform.

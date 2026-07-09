@@ -2,16 +2,17 @@
 
 package domain
 
-// APIPaymentErrorResponse represents class ApiPaymentErrorResponse
+// APIPaymentErrorResponse represents class ApiPaymentErrorResponse.
 type APIPaymentErrorResponse struct {
-	Detail   *string `json:"detail,omitempty"`
-	Instance *string `json:"instance,omitempty"`
-	Status   *int32  `json:"status,omitempty"`
-	Title    *string `json:"title,omitempty"`
-	Type     *string `json:"type,omitempty"`
+	Detail    *string `json:"detail,omitempty"`
+	Instance  *string `json:"instance,omitempty"`
+	RequestID *string `json:"requestId,omitempty"`
+	Status    *int32  `json:"status,omitempty"`
+	Title     *string `json:"title,omitempty"`
+	Type      *string `json:"type,omitempty"`
 }
 
-// NewAPIPaymentErrorResponse constructs a new APIPaymentErrorResponse instance
+// NewAPIPaymentErrorResponse constructs a new APIPaymentErrorResponse instance.
 func NewAPIPaymentErrorResponse() *APIPaymentErrorResponse {
 	return &APIPaymentErrorResponse{}
 }

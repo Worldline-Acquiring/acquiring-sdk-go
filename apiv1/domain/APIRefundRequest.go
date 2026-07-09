@@ -2,7 +2,7 @@
 
 package domain
 
-// APIRefundRequest represents class ApiRefundRequest
+// APIRefundRequest represents class ApiRefundRequest.
 type APIRefundRequest struct {
 	Amount                    *AmountData               `json:"amount,omitempty"`
 	CardPaymentData           *CardPaymentDataForRefund `json:"cardPaymentData,omitempty"`
@@ -14,7 +14,7 @@ type APIRefundRequest struct {
 	TransactionTimestamp      *string                   `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPIRefundRequest constructs a new APIRefundRequest instance
+// NewAPIRefundRequest constructs a new APIRefundRequest instance.
 func NewAPIRefundRequest() *APIRefundRequest {
 	return &APIRefundRequest{}
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/communicator"
 )
 
-// CreateAPIError is used internally in order to create an API error after an HTTP request is done
+// CreateAPIError is used internally in order to create an API error after an HTTP request is done.
 func CreateAPIError(statusCode int, responseBody string, errorObject interface{}, context *communicator.CallContext) (APIError, error) {
 	var typeValue string
 	var title string

@@ -2,13 +2,13 @@
 
 package domain
 
-// AddressVerificationData represents class AddressVerificationData
+// AddressVerificationData represents class AddressVerificationData.
 type AddressVerificationData struct {
 	CardholderAddress    *string `json:"cardholderAddress,omitempty"`
 	CardholderPostalCode *string `json:"cardholderPostalCode,omitempty"`
 }
 
-// NewAddressVerificationData constructs a new AddressVerificationData instance
+// NewAddressVerificationData constructs a new AddressVerificationData instance.
 func NewAddressVerificationData() *AddressVerificationData {
 	return &AddressVerificationData{}
 }

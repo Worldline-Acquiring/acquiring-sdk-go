@@ -2,7 +2,7 @@
 
 package domain
 
-// TerminalData represents class TerminalData
+// TerminalData represents class TerminalData.
 type TerminalData struct {
 	AllowSingleTap                   *bool     `json:"allowSingleTap,omitempty"`
 	CardReadingCapabilities          *[]string `json:"cardReadingCapabilities,omitempty"`
@@ -15,7 +15,7 @@ type TerminalData struct {
 	TerminalLocation                 *string   `json:"terminalLocation,omitempty"`
 }
 
-// NewTerminalData constructs a new TerminalData instance
+// NewTerminalData constructs a new TerminalData instance.
 func NewTerminalData() *TerminalData {
 	return &TerminalData{}
 }

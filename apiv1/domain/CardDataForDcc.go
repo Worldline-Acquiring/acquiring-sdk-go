@@ -2,7 +2,7 @@
 
 package domain
 
-// CardDataForDcc represents class CardDataForDcc
+// CardDataForDcc represents class CardDataForDcc.
 type CardDataForDcc struct {
 	Bin             *string `json:"bin,omitempty"`
 	Brand           *string `json:"brand,omitempty"`
@@ -10,7 +10,7 @@ type CardDataForDcc struct {
 	CardEntryMode   *string `json:"cardEntryMode,omitempty"`
 }
 
-// NewCardDataForDcc constructs a new CardDataForDcc instance
+// NewCardDataForDcc constructs a new CardDataForDcc instance.
 func NewCardDataForDcc() *CardDataForDcc {
 	return &CardDataForDcc{}
 }

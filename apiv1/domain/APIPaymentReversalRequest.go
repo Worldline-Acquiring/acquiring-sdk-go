@@ -2,7 +2,7 @@
 
 package domain
 
-// APIPaymentReversalRequest represents class ApiPaymentReversalRequest
+// APIPaymentReversalRequest represents class ApiPaymentReversalRequest.
 type APIPaymentReversalRequest struct {
 	DynamicCurrencyConversion *DccData      `json:"dynamicCurrencyConversion,omitempty"`
 	OperationID               *string       `json:"operationId,omitempty"`
@@ -11,7 +11,7 @@ type APIPaymentReversalRequest struct {
 	TransactionTimestamp      *string       `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPIPaymentReversalRequest constructs a new APIPaymentReversalRequest instance
+// NewAPIPaymentReversalRequest constructs a new APIPaymentReversalRequest instance.
 func NewAPIPaymentReversalRequest() *APIPaymentReversalRequest {
 	return &APIPaymentReversalRequest{}
 }

@@ -2,7 +2,7 @@
 
 package domain
 
-// MerchantData represents class MerchantData
+// MerchantData represents class MerchantData.
 type MerchantData struct {
 	Address              *string `json:"address,omitempty"`
 	City                 *string `json:"city,omitempty"`
@@ -13,7 +13,7 @@ type MerchantData struct {
 	StateCode            *string `json:"stateCode,omitempty"`
 }
 
-// NewMerchantData constructs a new MerchantData instance
+// NewMerchantData constructs a new MerchantData instance.
 func NewMerchantData() *MerchantData {
 	return &MerchantData{}
 }

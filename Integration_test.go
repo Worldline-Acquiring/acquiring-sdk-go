@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/payments"
+	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer/merchant/cardpayments"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/errors"
 	oauthErrors "github.com/Worldline-Acquiring/acquiring-sdk-go/authentication/oauth2/errors"
@@ -35,7 +35,7 @@ func TestIntegratedProcessPayment(t *testing.T) {
 		_ = client.Close()
 	}(client)
 
-	paymentsClient := client.V1().Acquirer(envAcquirerID).Merchant(envMerchantID).Payments()
+	paymentsClient := client.V1().Acquirer(envAcquirerID).Merchant(envMerchantID).CardPayments()
 
 	request := getProcessPaymentIntegrationTestRequest(t)
 	response, err := paymentsClient.ProcessPayment(request, nil)
@@ -46,7 +46,7 @@ func TestIntegratedProcessPayment(t *testing.T) {
 
 	paymentID := *response.PaymentID
 
-	query := payments.GetPaymentStatusParams{}
+	query := cardpayments.GetPaymentStatusParams{}
 	query.ReturnOperations = NewBool(true)
 
 	status, err := paymentsClient.GetPaymentStatus(paymentID, query, nil)
@@ -216,7 +216,7 @@ func assertPaymentStatusResponse(t *testing.T, paymentID string, response domain
 	assertEquals(t, "AUTHORIZED", response.Status)
 }
 
-func getDCCRateIntegrationTestRequest(t *testing.T, amount int64) domain.GetDCCRateRequest {
+func getDCCRateIntegrationTestRequest(t *testing.T, amount int64) domain.GetDccRateRequest {
 	amountData := domain.NewAmountData()
 	amountData.Amount = NewInt64(amount)
 	amountData.CurrencyCode = NewString("GBP")
@@ -234,7 +234,7 @@ func getDCCRateIntegrationTestRequest(t *testing.T, amount int64) domain.GetDCCR
 	cardDataForDcc.Bin = NewString("41766699")
 	cardDataForDcc.Brand = NewString("VISA")
 
-	request := domain.GetDCCRateRequest{}
+	request := domain.GetDccRateRequest{}
 	request.OperationID = NewString(pseudoUUID(t))
 	request.TargetCurrency = NewString("EUR")
 	request.CardPaymentData = cardDataForDcc
@@ -244,7 +244,7 @@ func getDCCRateIntegrationTestRequest(t *testing.T, amount int64) domain.GetDCCR
 	return request
 }
 
-func assertDccRateResponse(t *testing.T, body domain.GetDCCRateRequest, response domain.GetDccRateResponse) {
+func assertDccRateResponse(t *testing.T, body domain.GetDccRateRequest, response domain.GetDccRateResponse) {
 	assertNotNil(t, response.Proposal)
 	assertNotNil(t, response.Proposal.OriginalAmount)
 	assertEqualAmounts(t, body.Transaction.Amount, response.Proposal.OriginalAmount)

@@ -2,7 +2,7 @@
 
 package domain
 
-// APIBalanceInquiryResponse represents class ApiBalanceInquiryResponse
+// APIBalanceInquiryResponse represents class ApiBalanceInquiryResponse.
 type APIBalanceInquiryResponse struct {
 	AdditionalResponseData  *AdditionalResponseData     `json:"additionalResponseData,omitempty"`
 	AuthorizationCode       *string                     `json:"authorizationCode,omitempty"`
@@ -16,7 +16,7 @@ type APIBalanceInquiryResponse struct {
 	ResponseCodeDescription *string                     `json:"responseCodeDescription,omitempty"`
 }
 
-// NewAPIBalanceInquiryResponse constructs a new APIBalanceInquiryResponse instance
+// NewAPIBalanceInquiryResponse constructs a new APIBalanceInquiryResponse instance.
 func NewAPIBalanceInquiryResponse() *APIBalanceInquiryResponse {
 	return &APIBalanceInquiryResponse{}
 }

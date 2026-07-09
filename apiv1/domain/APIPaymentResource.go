@@ -2,7 +2,7 @@
 
 package domain
 
-// APIPaymentResource represents class ApiPaymentResource
+// APIPaymentResource represents class ApiPaymentResource.
 type APIPaymentResource struct {
 	CardPaymentData          *CardPaymentDataForResource `json:"cardPaymentData,omitempty"`
 	InitialAuthorizationCode *string                     `json:"initialAuthorizationCode,omitempty"`
@@ -14,7 +14,7 @@ type APIPaymentResource struct {
 	TotalAuthorizedAmount    *AmountData                 `json:"totalAuthorizedAmount,omitempty"`
 }
 
-// NewAPIPaymentResource constructs a new APIPaymentResource instance
+// NewAPIPaymentResource constructs a new APIPaymentResource instance.
 func NewAPIPaymentResource() *APIPaymentResource {
 	return &APIPaymentResource{}
 }

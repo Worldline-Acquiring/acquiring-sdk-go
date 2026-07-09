@@ -2,7 +2,7 @@
 
 package domain
 
-// APIIncrementResponse represents class ApiIncrementResponse
+// APIIncrementResponse represents class ApiIncrementResponse.
 type APIIncrementResponse struct {
 	AdditionalResponseData  *AdditionalResponseData       `json:"additionalResponseData,omitempty"`
 	AuthorizationCode       *string                       `json:"authorizationCode,omitempty"`
@@ -15,7 +15,7 @@ type APIIncrementResponse struct {
 	TotalAuthorizedAmount   *AmountData                   `json:"totalAuthorizedAmount,omitempty"`
 }
 
-// NewAPIIncrementResponse constructs a new APIIncrementResponse instance
+// NewAPIIncrementResponse constructs a new APIIncrementResponse instance.
 func NewAPIIncrementResponse() *APIIncrementResponse {
 	return &APIIncrementResponse{}
 }

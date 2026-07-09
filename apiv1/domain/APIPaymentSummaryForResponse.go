@@ -2,7 +2,7 @@
 
 package domain
 
-// APIPaymentSummaryForResponse represents class ApiPaymentSummaryForResponse
+// APIPaymentSummaryForResponse represents class ApiPaymentSummaryForResponse.
 type APIPaymentSummaryForResponse struct {
 	PaymentID       *string                    `json:"paymentId,omitempty"`
 	References      *APIReferencesForResponses `json:"references,omitempty"`
@@ -10,7 +10,7 @@ type APIPaymentSummaryForResponse struct {
 	StatusTimestamp *string                    `json:"statusTimestamp,omitempty"`
 }
 
-// NewAPIPaymentSummaryForResponse constructs a new APIPaymentSummaryForResponse instance
+// NewAPIPaymentSummaryForResponse constructs a new APIPaymentSummaryForResponse instance.
 func NewAPIPaymentSummaryForResponse() *APIPaymentSummaryForResponse {
 	return &APIPaymentSummaryForResponse{}
 }

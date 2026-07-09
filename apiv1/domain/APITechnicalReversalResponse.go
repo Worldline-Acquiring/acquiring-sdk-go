@@ -2,7 +2,7 @@
 
 package domain
 
-// APITechnicalReversalResponse represents class ApiTechnicalReversalResponse
+// APITechnicalReversalResponse represents class ApiTechnicalReversalResponse.
 type APITechnicalReversalResponse struct {
 	OperationID             *string `json:"operationId,omitempty"`
 	Responder               *string `json:"responder,omitempty"`
@@ -11,7 +11,7 @@ type APITechnicalReversalResponse struct {
 	ResponseCodeDescription *string `json:"responseCodeDescription,omitempty"`
 }
 
-// NewAPITechnicalReversalResponse constructs a new APITechnicalReversalResponse instance
+// NewAPITechnicalReversalResponse constructs a new APITechnicalReversalResponse instance.
 func NewAPITechnicalReversalResponse() *APITechnicalReversalResponse {
 	return &APITechnicalReversalResponse{}
 }

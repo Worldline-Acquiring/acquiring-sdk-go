@@ -2,14 +2,14 @@
 
 package domain
 
-// ECommerceData represents class ECommerceData
+// ECommerceData represents class ECommerceData.
 type ECommerceData struct {
 	AddressVerificationData *AddressVerificationData `json:"addressVerificationData,omitempty"`
 	ScaExemptionRequest     *string                  `json:"scaExemptionRequest,omitempty"`
 	ThreeDSecure            *ThreeDSecure            `json:"threeDSecure,omitempty"`
 }
 
-// NewECommerceData constructs a new ECommerceData instance
+// NewECommerceData constructs a new ECommerceData instance.
 func NewECommerceData() *ECommerceData {
 	return &ECommerceData{}
 }

@@ -1,6 +1,6 @@
 // This file was automatically generated.
 
-package payments
+package cardpayments
 
 import (
 	"strconv"
@@ -8,14 +8,14 @@ import (
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/communicator/communication"
 )
 
-// GetPaymentStatusParams represents query parameters for Retrieve payment
+// GetPaymentStatusParams represents query parameters for Retrieve payment.
 //
-// Documentation can be found at https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/getPaymentStatus
+// Documentation can be found at https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/getPaymentStatus.
 type GetPaymentStatusParams struct {
 	ReturnOperations *bool
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *GetPaymentStatusParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -27,7 +27,7 @@ func (params *GetPaymentStatusParams) ToRequestParameters() communication.Reques
 	return reqParams
 }
 
-// NewGetPaymentStatusParams constructs a new GetPaymentStatusParams instance
+// NewGetPaymentStatusParams constructs a new GetPaymentStatusParams instance.
 func NewGetPaymentStatusParams() *GetPaymentStatusParams {
 	return &GetPaymentStatusParams{}
 }

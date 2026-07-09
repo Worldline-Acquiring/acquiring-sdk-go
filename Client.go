@@ -34,18 +34,19 @@ func (c *Client) DisableLogging() {
 	c.apiResource.Communicator().DisableLogging()
 }
 
-// Close calls the internal closer of the communicator
+// Close calls the internal closer of the communicator.
 func (c *Client) Close() error {
 	return c.apiResource.Communicator().Close()
 }
 
-// V1 represents API v1
+// V1 represents API v1.
 func (c *Client) V1() *apiv1.Client {
 	client, _ := apiv1.NewClient(c.apiResource, nil)
+
 	return client
 }
 
-// NewClient creates a new Client with the given communicator
+// NewClient creates a new Client with the given communicator.
 func NewClient(comm *communicator.Communicator) (*Client, error) {
 	apiResource, err := communicator.NewAPIResource(comm, nil)
 	if err != nil {

@@ -1,6 +1,6 @@
 // This file was automatically generated.
 
-package refunds
+package cardrefunds
 
 import (
 	"strconv"
@@ -8,14 +8,14 @@ import (
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/communicator/communication"
 )
 
-// GetRefundParams represents query parameters for Retrieve refund
+// GetRefundParams represents query parameters for Retrieve card refund.
 //
-// Documentation can be found at https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/getRefund
+// Documentation can be found at https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/getRefund.
 type GetRefundParams struct {
 	ReturnOperations *bool
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *GetRefundParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -27,7 +27,7 @@ func (params *GetRefundParams) ToRequestParameters() communication.RequestParams
 	return reqParams
 }
 
-// NewGetRefundParams constructs a new GetRefundParams instance
+// NewGetRefundParams constructs a new GetRefundParams instance.
 func NewGetRefundParams() *GetRefundParams {
 	return &GetRefundParams{}
 }

@@ -2,7 +2,7 @@
 
 package domain
 
-// SubOperationForRefund represents class SubOperationForRefund
+// SubOperationForRefund represents class SubOperationForRefund.
 type SubOperationForRefund struct {
 	Amount                  *AmountData `json:"amount,omitempty"`
 	OperationID             *string     `json:"operationId,omitempty"`
@@ -13,7 +13,7 @@ type SubOperationForRefund struct {
 	ResponseCodeDescription *string     `json:"responseCodeDescription,omitempty"`
 }
 
-// NewSubOperationForRefund constructs a new SubOperationForRefund instance
+// NewSubOperationForRefund constructs a new SubOperationForRefund instance.
 func NewSubOperationForRefund() *SubOperationForRefund {
 	return &SubOperationForRefund{}
 }

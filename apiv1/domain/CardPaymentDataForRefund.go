@@ -2,7 +2,7 @@
 
 package domain
 
-// CardPaymentDataForRefund represents class CardPaymentDataForRefund
+// CardPaymentDataForRefund represents class CardPaymentDataForRefund.
 type CardPaymentDataForRefund struct {
 	Brand                        *string           `json:"brand,omitempty"`
 	BrandSelector                *string           `json:"brandSelector,omitempty"`
@@ -15,7 +15,7 @@ type CardPaymentDataForRefund struct {
 	WalletID                     *string           `json:"walletId,omitempty"`
 }
 
-// NewCardPaymentDataForRefund constructs a new CardPaymentDataForRefund instance
+// NewCardPaymentDataForRefund constructs a new CardPaymentDataForRefund instance.
 func NewCardPaymentDataForRefund() *CardPaymentDataForRefund {
 	return &CardPaymentDataForRefund{}
 }

@@ -2,7 +2,7 @@
 
 package domain
 
-// APITechnicalReversalRequest represents class ApiTechnicalReversalRequest
+// APITechnicalReversalRequest represents class ApiTechnicalReversalRequest.
 type APITechnicalReversalRequest struct {
 	OperationID          *string       `json:"operationId,omitempty"`
 	Reason               *string       `json:"reason,omitempty"`
@@ -10,7 +10,7 @@ type APITechnicalReversalRequest struct {
 	TransactionTimestamp *string       `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPITechnicalReversalRequest constructs a new APITechnicalReversalRequest instance
+// NewAPITechnicalReversalRequest constructs a new APITechnicalReversalRequest instance.
 func NewAPITechnicalReversalRequest() *APITechnicalReversalRequest {
 	return &APITechnicalReversalRequest{}
 }

@@ -2,7 +2,7 @@
 
 package domain
 
-// APIAccountVerificationResponse represents class ApiAccountVerificationResponse
+// APIAccountVerificationResponse represents class ApiAccountVerificationResponse.
 type APIAccountVerificationResponse struct {
 	AdditionalResponseData  *AdditionalResponseData     `json:"additionalResponseData,omitempty"`
 	AuthorizationCode       *string                     `json:"authorizationCode,omitempty"`
@@ -15,7 +15,7 @@ type APIAccountVerificationResponse struct {
 	ResponseCodeDescription *string                     `json:"responseCodeDescription,omitempty"`
 }
 
-// NewAPIAccountVerificationResponse constructs a new APIAccountVerificationResponse instance
+// NewAPIAccountVerificationResponse constructs a new APIAccountVerificationResponse instance.
 func NewAPIAccountVerificationResponse() *APIAccountVerificationResponse {
 	return &APIAccountVerificationResponse{}
 }

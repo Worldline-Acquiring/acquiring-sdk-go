@@ -2,8 +2,8 @@
 
 package domain
 
-// GetDCCRateRequest represents class GetDCCRateRequest
-type GetDCCRateRequest struct {
+// GetDccRateRequest represents class GetDccRateRequest.
+type GetDccRateRequest struct {
 	CardPaymentData *CardDataForDcc        `json:"cardPaymentData,omitempty"`
 	OperationID     *string                `json:"operationId,omitempty"`
 	PointOfSaleData *PointOfSaleDataForDcc `json:"pointOfSaleData,omitempty"`
@@ -12,7 +12,7 @@ type GetDCCRateRequest struct {
 	Transaction     *TransactionDataForDcc `json:"transaction,omitempty"`
 }
 
-// NewGetDCCRateRequest constructs a new GetDCCRateRequest instance
-func NewGetDCCRateRequest() *GetDCCRateRequest {
-	return &GetDCCRateRequest{}
+// NewGetDccRateRequest constructs a new GetDccRateRequest instance.
+func NewGetDccRateRequest() *GetDccRateRequest {
+	return &GetDccRateRequest{}
 }

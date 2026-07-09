@@ -2,14 +2,15 @@
 
 package domain
 
-// SubsequentCardOnFileData represents class SubsequentCardOnFileData
+// SubsequentCardOnFileData represents class SubsequentCardOnFileData.
 type SubsequentCardOnFileData struct {
-	CardOnFileInitiator        *string `json:"cardOnFileInitiator,omitempty"`
-	InitialSchemeTransactionID *string `json:"initialSchemeTransactionId,omitempty"`
-	TransactionType            *string `json:"transactionType,omitempty"`
+	CardOnFileInitiator            *string `json:"cardOnFileInitiator,omitempty"`
+	InitialSchemeTransactionID     *string `json:"initialSchemeTransactionId,omitempty"`
+	InitialSchemeTransactionLinkID *string `json:"initialSchemeTransactionLinkId,omitempty"`
+	TransactionType                *string `json:"transactionType,omitempty"`
 }
 
-// NewSubsequentCardOnFileData constructs a new SubsequentCardOnFileData instance
+// NewSubsequentCardOnFileData constructs a new SubsequentCardOnFileData instance.
 func NewSubsequentCardOnFileData() *SubsequentCardOnFileData {
 	return &SubsequentCardOnFileData{}
 }

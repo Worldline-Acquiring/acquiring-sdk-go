@@ -2,7 +2,7 @@
 
 package domain
 
-// APIIncrementRequest represents class ApiIncrementRequest
+// APIIncrementRequest represents class ApiIncrementRequest.
 type APIIncrementRequest struct {
 	DynamicCurrencyConversion *DccData      `json:"dynamicCurrencyConversion,omitempty"`
 	IncrementAmount           *AmountData   `json:"incrementAmount,omitempty"`
@@ -11,7 +11,7 @@ type APIIncrementRequest struct {
 	TransactionTimestamp      *string       `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPIIncrementRequest constructs a new APIIncrementRequest instance
+// NewAPIIncrementRequest constructs a new APIIncrementRequest instance.
 func NewAPIIncrementRequest() *APIIncrementRequest {
 	return &APIIncrementRequest{}
 }

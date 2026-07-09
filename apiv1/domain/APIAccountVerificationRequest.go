@@ -2,7 +2,7 @@
 
 package domain
 
-// APIAccountVerificationRequest represents class ApiAccountVerificationRequest
+// APIAccountVerificationRequest represents class ApiAccountVerificationRequest.
 type APIAccountVerificationRequest struct {
 	CardPaymentData      *CardPaymentDataForVerification `json:"cardPaymentData,omitempty"`
 	Merchant             *MerchantData                   `json:"merchant,omitempty"`
@@ -12,7 +12,7 @@ type APIAccountVerificationRequest struct {
 	TransactionTimestamp *string                         `json:"transactionTimestamp,omitempty"`
 }
 
-// NewAPIAccountVerificationRequest constructs a new APIAccountVerificationRequest instance
+// NewAPIAccountVerificationRequest constructs a new APIAccountVerificationRequest instance.
 func NewAPIAccountVerificationRequest() *APIAccountVerificationRequest {
 	return &APIAccountVerificationRequest{}
 }

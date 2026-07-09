@@ -2,7 +2,7 @@
 
 package domain
 
-// APIActionResponseForRefund represents class ApiActionResponseForRefund
+// APIActionResponseForRefund represents class ApiActionResponseForRefund.
 type APIActionResponseForRefund struct {
 	AdditionalResponseData  *AdditionalResponseData      `json:"additionalResponseData,omitempty"`
 	OperationID             *string                      `json:"operationId,omitempty"`
@@ -13,7 +13,7 @@ type APIActionResponseForRefund struct {
 	ResponseCodeDescription *string                      `json:"responseCodeDescription,omitempty"`
 }
 
-// NewAPIActionResponseForRefund constructs a new APIActionResponseForRefund instance
+// NewAPIActionResponseForRefund constructs a new APIActionResponseForRefund instance.
 func NewAPIActionResponseForRefund() *APIActionResponseForRefund {
 	return &APIActionResponseForRefund{}
 }
