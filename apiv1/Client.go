@@ -4,6 +4,9 @@ package apiv1
 
 import (
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/acquirer"
+	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/disputedocuments"
+	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/disputeentries"
+	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/disputemanagement"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/apiv1/ping"
 	"github.com/Worldline-Acquiring/acquiring-sdk-go/communicator"
 )
@@ -25,6 +28,27 @@ func (c *Client) Acquirer(acquirerID string) *acquirer.Client {
 // Ping represents the resource /services/v1/ping.
 func (c *Client) Ping() *ping.Client {
 	client, _ := ping.NewClient(c.apiResource, nil)
+
+	return client
+}
+
+// DisputeManagement represents the resource /dispute-management/v1/disputes/search.
+func (c *Client) DisputeManagement() *disputemanagement.Client {
+	client, _ := disputemanagement.NewClient(c.apiResource, nil)
+
+	return client
+}
+
+// DisputeDocuments represents the resource /dispute-management/v1/documents.
+func (c *Client) DisputeDocuments() *disputedocuments.Client {
+	client, _ := disputedocuments.NewClient(c.apiResource, nil)
+
+	return client
+}
+
+// DisputeEntries represents the resource /dispute-management/v1/dispute-entries/search.
+func (c *Client) DisputeEntries() *disputeentries.Client {
+	client, _ := disputeentries.NewClient(c.apiResource, nil)
 
 	return client
 }

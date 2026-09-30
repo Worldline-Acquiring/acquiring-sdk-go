@@ -6,6 +6,7 @@ package domain
 type APICaptureRequest struct {
 	Amount                     *AmountData                 `json:"amount,omitempty"`
 	CaptureAmountBreakdownData *CaptureAmountBreakdownData `json:"captureAmountBreakdownData,omitempty"`
+	CapturePointOfSaleData     *CapturePointOfSaleData     `json:"capturePointOfSaleData,omitempty"`
 	CaptureSequenceNumber      *int32                      `json:"captureSequenceNumber,omitempty"`
 	DynamicCurrencyConversion  *DccData                    `json:"dynamicCurrencyConversion,omitempty"`
 	IsFinal                    *bool                       `json:"isFinal,omitempty"`

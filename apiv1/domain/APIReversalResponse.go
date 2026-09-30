@@ -4,14 +4,8 @@ package domain
 
 // APIReversalResponse represents class ApiReversalResponse.
 type APIReversalResponse struct {
-	AdditionalResponseData  *AdditionalResponseData       `json:"additionalResponseData,omitempty"`
-	OperationID             *string                       `json:"operationId,omitempty"`
-	Payment                 *APIPaymentSummaryForResponse `json:"payment,omitempty"`
-	Responder               *string                       `json:"responder,omitempty"`
-	ResponseCode            *string                       `json:"responseCode,omitempty"`
-	ResponseCodeCategory    *string                       `json:"responseCodeCategory,omitempty"`
-	ResponseCodeDescription *string                       `json:"responseCodeDescription,omitempty"`
-	TotalAuthorizedAmount   *AmountData                   `json:"totalAuthorizedAmount,omitempty"`
+	APIActionResponse
+	TotalAuthorizedAmount *AmountData `json:"totalAuthorizedAmount,omitempty"`
 }
 
 // NewAPIReversalResponse constructs a new APIReversalResponse instance.

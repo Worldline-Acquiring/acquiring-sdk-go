@@ -5,10 +5,9 @@ package domain
 // PointOfSaleData represents class PointOfSaleData.
 type PointOfSaleData struct {
 	EmvData                       *[]EmvDataItem `json:"emvData,omitempty"`
-	EncryptedPinBlock             *string        `json:"encryptedPinBlock,omitempty"`
 	IsResponseToPinRequest        *bool          `json:"isResponseToPinRequest,omitempty"`
 	IsRetryWithTheSameOperationID *bool          `json:"isRetryWithTheSameOperationId,omitempty"`
-	PinMasterKeyReference         *string        `json:"pinMasterKeyReference,omitempty"`
+	OnlinePinData                 *OnlinePinData `json:"onlinePinData,omitempty"`
 	Track2Data                    *string        `json:"track2Data,omitempty"`
 }
 

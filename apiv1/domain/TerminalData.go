@@ -9,6 +9,7 @@ type TerminalData struct {
 	CardholderActivatedTerminalLevel *string   `json:"cardholderActivatedTerminalLevel,omitempty"`
 	IsAttendedTerminal               *bool     `json:"isAttendedTerminal,omitempty"`
 	IsOfflineApproved                *bool     `json:"isOfflineApproved,omitempty"`
+	MposDevice                       *string   `json:"mposDevice,omitempty"`
 	OfflineAuthorizationResponseCode *string   `json:"offlineAuthorizationResponseCode,omitempty"`
 	PinEntryCapability               *string   `json:"pinEntryCapability,omitempty"`
 	TerminalID                       *string   `json:"terminalId,omitempty"`
