@@ -78,13 +78,13 @@ func TestIntegratedRequestDCCRate(t *testing.T) {
 func TestIntegratedValidOAuth2Scopes(t *testing.T) {
 	skipTestIfNeeded(t)
 
-	validOauth2Scopes := []string{
+	validOAuth2Scopes := []string{
 		"processing_dcc_rate",
 		"processing_dcc_rate services_ping",
 		"",
 	}
-	for i := range validOauth2Scopes {
-		oauth2Scopes := validOauth2Scopes[i]
+	for i := range validOAuth2Scopes {
+		oauth2Scopes := validOAuth2Scopes[i]
 		t.Run(fmt.Sprintf("with scopes '%s'", oauth2Scopes), func(t *testing.T) {
 			conf, err := getConfigurationIntegration()
 			if err != nil {

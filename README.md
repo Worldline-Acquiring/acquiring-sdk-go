@@ -14,7 +14,7 @@ See the [Worldline Acquiring Documentation](https://docs.acquiring.worldline-sol
 
 ## Requirements
 
-Go version 1.20 or higher is required. No additional packages are required.
+Go version 1.26 or higher is supported. No additional packages are required.
 
 ## Examples
 
@@ -30,9 +30,9 @@ To install the latest version of this repository, run the following command from
 
 ### Release
 
-Go 1.11 added [module support](https://blog.golang.org/using-go-modules) and with that support for versions in `go get`. This means that, if your project uses modules, you can add `@version` to the go get command to get a specific version. For example, `go get github.com/Worldline-Acquiring/acquiring-sdk-go@2.9.0` will download version 2.9.0 of the SDK. See the releases page for an overview of available releases.
+You can add `@version` to the go get command to get a specific version. For example, `go get github.com/Worldline-Acquiring/acquiring-sdk-go@2.9.0` will download version 2.9.0 of the SDK. See the releases page for an overview of available releases.
 
-If your project does not use modules yet, you will need to use the instructions above to install from source. Note that new major versions may introduce breaking changes. We therefore recommend using modules in your project. See [Migrating to Go Modules](https://blog.golang.org/migrating-to-go-modules) for more information.
+Note that new major versions may introduce breaking changes. We therefore recommend pinning the version of the SDK in your [Go module](https://go.dev/ref/mod).
 
 ## Running tests
 
